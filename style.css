@@ -1,0 +1,107 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --bg-very-dark-blue: hsl(217, 54%, 11%);
+  --very-dark-blue: hsl(216, 51%, 16%);
+  --very-dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.4;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  background-color: var(--bg-very-dark-blue);
+}
+
+.main-img {
+  width: 302px;
+  border-radius: 5px;
+}
+
+.av-img {
+  width: 33px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  margin-right: 1rem;
+}
+
+main {
+  background-color: var(--very-dark-blue);
+  color: var(--soft-blue);
+  margin: 152px auto 32px auto;
+  width: 350px;
+  height: 596px;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+h1 {
+  color: var(--white);
+  margin: 1.5rem 0;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.description {
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+
+span {
+  color: var(--white);
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+}
+
+.ethereum {
+  color: var(--cyan);
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+}
+
+.ethereum__icon {
+  margin-right: .5rem;
+}
+
+.clock__icon {
+  margin-right: .5rem;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: .5rem;
+  border-top: 1px solid var(--very-dark-blue-line);
+}
