@@ -22,6 +22,7 @@ dd {
 :root {
   --soft-blue: hsl(215, 51%, 70%);
   --cyan: hsl(178, 100%, 50%);
+  --cyan-transparent: hsla(178, 100%, 50%, 0.5); 
   --bg-very-dark-blue: hsl(217, 54%, 11%);
   --very-dark-blue: hsl(216, 51%, 16%);
   --very-dark-blue-line: hsl(215, 32%, 27%);
@@ -36,19 +37,69 @@ body {
   background-color: var(--bg-very-dark-blue);
 }
 
-.main-img {
-  width: 302px;
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+a:hover, a:active {
+  color: var(--cyan);
+}
+
+/* Main Image */
+.equilibrium {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+.equilibrium__image {
+  display: block;
+  max-width: 300px;
+  width: 100%;
   border-radius: 5px;
 }
 
-.av-img {
+.equilibrium__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--cyan);
+  opacity: 0;
+}
+
+.equilibrium__view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: none;
+}
+
+.equilibrium:hover .equilibrium__overlay {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.equilibrium:hover .equilibrium__overlay + .equilibrium__view {
+  display: block;
+  cursor: pointer;
+}
+
+.footer__image {
   width: 33px;
   border-radius: 50%;
   border: 1px solid var(--white);
   margin-right: 1rem;
 }
 
-main {
+.card {
   background-color: var(--very-dark-blue);
   color: var(--soft-blue);
   margin: 152px auto 32px auto;
@@ -58,8 +109,8 @@ main {
   padding: 24px;
 }
 
-h1 {
-  color: var(--white);
+.title {
+  /* color: var(--white); */
   margin: 1.5rem 0;
   font-weight: 600;
   font-size: 22px;
@@ -68,10 +119,6 @@ h1 {
 .description {
   font-size: 1.125rem;
   font-weight: 300;
-}
-
-span {
-  color: var(--white);
 }
 
 .data {
@@ -104,4 +151,25 @@ footer {
   padding-top: 1rem;
   padding-bottom: .5rem;
   border-top: 1px solid var(--very-dark-blue-line);
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    margin-bottom: .75rem;
+  }
+
+  .data {
+    margin: 1rem 0;
+  }
+
+  .card {
+    width: 327px;
+    height: 543px;
+  }
+
+  .equilibrium-img{
+    width: 278px;
+    border-radius: 0;
+  }
+
 }
